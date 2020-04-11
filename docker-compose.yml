@@ -1,0 +1,30 @@
+version: "2"
+services:
+
+  snmp:
+    image: quay.io/prometheus/snmp-exporter
+    container_name: snmp_exporter
+    volumes:
+      - /opt/ipsec_monitor/snmp.yml:/etc/snmp_exporter/snmp.yml
+    ports:
+      - 9116:9116
+      - 116:116/udp
+    restart: always
+    command: --config.file=/etc/snmp_exporter/snmp.yml
+
+
+  prometheus:
+                                                                                                                                                                                image: prom/prometheus:v2.11.1
+    container_name: prometheus
+
+    volumes:
+      - /opt/ipsec_monitor/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /opt/ipsec_monitor/prometheus-data:/prometheus
+
+    ports:
+      - 9090:9090
+
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=365d'
