@@ -14,17 +14,14 @@ services:
 
 
   prometheus:
-                                                                                                                                                                                image: prom/prometheus:v2.11.1
+    image: prom/prometheus:latest
     container_name: prometheus
-
-    volumes:
-      - /opt/ipsec_monitor/prometheus.yml:/etc/prometheus/prometheus.yml
-      - /opt/ipsec_monitor/prometheus-data:/prometheus
-
     ports:
       - 9090:9090
-
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+      - --config.file=/etc/prometheus/prometheus.yml
       - '--storage.tsdb.path=/prometheus'
       - '--storage.tsdb.retention.time=365d'
+    volumes:
+      - /opt/ipsec_monitor/prometheus.yml:/etc/prometheus/prometheus.yml
+     # - /opt/ipsec_monitor/prometheus-data:/prometheus
