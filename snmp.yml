@@ -1,0 +1,156 @@
+SNMPv2-SMI:
+  walk:
+  - 1.3.6.1.4.1.11256.1.1
+  get:
+  - 1.3.6.1.4.1.11256.1.13.2.2.0
+  metrics:
+  - name: snsVPNSAIndex
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.1
+    type: gauge
+    help: A unique value for phase one table - 1.3.6.1.4.1.11256.1.1.1.1.1
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNIPSrc
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.2
+    type: DisplayString
+    help: IP source - 1.3.6.1.4.1.11256.1.1.1.1.2
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNIPDst
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.3
+    type: DisplayString
+    help: IP destination - 1.3.6.1.4.1.11256.1.1.1.1.3
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNType
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.4
+    type: gauge
+    help: Type - 1.3.6.1.4.1.11256.1.1.1.1.4
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+    enum_values:
+      0: unspec
+      1: unknown
+      2: ah
+      3: esp
+      4: rsvp
+      5: ospfv2
+      6: ripv2
+      7: mip
+      8: ipcomp
+  - name: snsVPNMode
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.5
+    type: gauge
+    help: Mode - 1.3.6.1.4.1.11256.1.1.1.1.5
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+    enum_values:
+      0: any
+      1: transport
+      2: tunnel
+  - name: snsVPNSpi
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.6
+    type: gauge
+    help: Secure property index - 1.3.6.1.4.1.11256.1.1.1.1.6
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNPeerSpi
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.7
+    type: gauge
+    help: Secure property index of the peer - 1.3.6.1.4.1.11256.1.1.1.1.7
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNReqID
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.8
+    type: gauge
+    help: ReqID - 1.3.6.1.4.1.11256.1.1.1.1.8
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNEnc
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.9
+    type: DisplayString
+    help: Enc - 1.3.6.1.4.1.11256.1.1.1.1.9
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNAuth
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.10
+    type: gauge
+    help: Auth - 1.3.6.1.4.1.11256.1.1.1.1.10
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+    enum_values:
+      0: none
+      2: hmac-md5
+      3: hmac-sha1
+      5: hmac-sha256
+      6: hmac-sha384
+      7: hmac-sha512
+      249: md5
+      250: sha
+      251: "null"
+  - name: snsVPNState
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.11
+    type: gauge
+    help: VPN State - 1.3.6.1.4.1.11256.1.1.1.1.11
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+    enum_values:
+      0: larval
+      1: mature
+      2: dying
+      3: dead
+  - name: snsVPNLifetime
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.12
+    type: counter
+    help: Lifetime - 1.3.6.1.4.1.11256.1.1.1.1.12
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNBytes
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.13
+    type: counter
+    help: Bytes - 1.3.6.1.4.1.11256.1.1.1.1.13
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNMaxLifetime
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.14
+    type: counter
+    help: MaxLifetime - 1.3.6.1.4.1.11256.1.1.1.1.14
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsVPNMaxBytes
+    oid: 1.3.6.1.4.1.11256.1.1.1.1.15
+    type: counter
+    help: MaxBytes - 1.3.6.1.4.1.11256.1.1.1.1.15
+    indexes:
+    - labelname: snsVPNSAIndex
+      type: gauge
+  - name: snsIPSECStatsSADMature
+    oid: 1.3.6.1.4.1.11256.1.13.2.2
+    type: counter
+    help: Number established security associations - 1.3.6.1.4.1.11256.1.13.2.2
+  version: 3
+  max_repetitions: 25
+  retries: 3
+  timeout: 10s
+  auth:
+    community: community # a changer
+    security_level: authPriv
+    username: superuser # a changer
+    password: superpassword # a changer
+    auth_protocol: SHA
+    priv_protocol: AES
+    priv_password: superpassword # a changer
