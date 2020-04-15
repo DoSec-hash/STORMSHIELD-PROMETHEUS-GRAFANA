@@ -1,9 +1,94 @@
 SNMPv2-SMI:
   walk:
   - 1.3.6.1.4.1.11256.1.1
+  - 1.3.6.1.4.1.11256.1.10.5
+  - 1.3.6.1.4.1.11256.1.10.6
+  - 1.3.6.1.4.1.11256.1.10.7
+  - 1.3.6.1.4.1.11256.1.10.8
+  - 1.3.6.1.4.1.11256.1.10.9
+  - 1.3.6.1.4.1.11256.1.3.1
   get:
+  - 1.3.6.1.4.1.11256.1.0.1.0
+  - 1.3.6.1.4.1.11256.1.0.10.0
+  - 1.3.6.1.4.1.11256.1.0.11.0
+  - 1.3.6.1.4.1.11256.1.0.12.0
+  - 1.3.6.1.4.1.11256.1.0.13.0
+  - 1.3.6.1.4.1.11256.1.0.14.0
+  - 1.3.6.1.4.1.11256.1.0.15.0
+  - 1.3.6.1.4.1.11256.1.0.2.0
+  - 1.3.6.1.4.1.11256.1.0.3.0
+  - 1.3.6.1.4.1.11256.1.0.4.0
+  - 1.3.6.1.4.1.11256.1.0.5.0
+  - 1.3.6.1.4.1.11256.1.0.6.0
+  - 1.3.6.1.4.1.11256.1.0.7.0
+  - 1.3.6.1.4.1.11256.1.0.8.0
+  - 1.3.6.1.4.1.11256.1.0.9.0
+  - 1.3.6.1.4.1.11256.1.10.1.0
+  - 1.3.6.1.4.1.11256.1.10.2.0
+  - 1.3.6.1.4.1.11256.1.10.3.0
+  - 1.3.6.1.4.1.11256.1.10.4.0
   - 1.3.6.1.4.1.11256.1.13.2.2.0
   metrics:
+  - name: snsModel
+    oid: 1.3.6.1.4.1.11256.1.0.1
+    type: DisplayString
+    help: Stormshield Firewall model - 1.3.6.1.4.1.11256.1.0.1
+  - name: snsNbSerial
+    oid: 1.3.6.1.4.1.11256.1.0.10
+    type: gauge
+    help: Number of serial ports - 1.3.6.1.4.1.11256.1.0.10
+  - name: snsNbLoopback
+    oid: 1.3.6.1.4.1.11256.1.0.11
+    type: gauge
+    help: Number of loopback interfaces - 1.3.6.1.4.1.11256.1.0.11
+  - name: snsWatchdog
+    oid: 1.3.6.1.4.1.11256.1.0.12
+    type: gauge
+    help: Watchdog - 1.3.6.1.4.1.11256.1.0.12
+  - name: snsLed
+    oid: 1.3.6.1.4.1.11256.1.0.13
+    type: gauge
+    help: Firewall LED - 1.3.6.1.4.1.11256.1.0.13
+  - name: snsClone
+    oid: 1.3.6.1.4.1.11256.1.0.14
+    type: gauge
+    help: Firewall licence 'clone' token - 1.3.6.1.4.1.11256.1.0.14
+  - name: snsHADialup
+    oid: 1.3.6.1.4.1.11256.1.0.15
+    type: gauge
+    help: Firewall licence 'HA-dialup' token - 1.3.6.1.4.1.11256.1.0.15
+  - name: snsVersion
+    oid: 1.3.6.1.4.1.11256.1.0.2
+    type: DisplayString
+    help: Stormshield Firewall version - 1.3.6.1.4.1.11256.1.0.2
+  - name: snsSerialNumber
+    oid: 1.3.6.1.4.1.11256.1.0.3
+    type: DisplayString
+    help: Stormshield Firewall serial number - 1.3.6.1.4.1.11256.1.0.3
+  - name: snsSystemName
+    oid: 1.3.6.1.4.1.11256.1.0.4
+    type: DisplayString
+    help: Stormshield Firewall system Name - 1.3.6.1.4.1.11256.1.0.4
+  - name: snsSystemLanguage
+    oid: 1.3.6.1.4.1.11256.1.0.5
+    type: DisplayString
+    help: Firewall language - 1.3.6.1.4.1.11256.1.0.5
+  - name: snsNbEther
+    oid: 1.3.6.1.4.1.11256.1.0.6
+    type: gauge
+    help: Number of Ethernet interfaces - 1.3.6.1.4.1.11256.1.0.6
+  - name: snsNbVlan
+    oid: 1.3.6.1.4.1.11256.1.0.7
+    type: gauge
+    help: Number of VLAN interfaces - 1.3.6.1.4.1.11256.1.0.7
+  - name: snsNbDialup
+    oid: 1.3.6.1.4.1.11256.1.0.8
+    type: gauge
+    help: Number of Dialup - 1.3.6.1.4.1.11256.1.0.8
+  - name: snsNbPPTP
+    oid: 1.3.6.1.4.1.11256.1.0.9
+    type: gauge
+    help: Number of PPTP - 1.3.6.1.4.1.11256.1.0.9
   - name: snsVPNSAIndex
     oid: 1.3.6.1.4.1.11256.1.1.1.1.1
     type: gauge
@@ -138,10 +223,277 @@ SNMPv2-SMI:
     indexes:
     - labelname: snsVPNSAIndex
       type: gauge
+  - name: snsDate
+    oid: 1.3.6.1.4.1.11256.1.10.1
+    type: DisplayString
+    help: Stormshield Firewall current date (%Y-%m-%d %T) - 1.3.6.1.4.1.11256.1.10.1
+  - name: snsUptime
+    oid: 1.3.6.1.4.1.11256.1.10.2
+    type: DisplayString
+    help: Stormshield Firewal system running for day:hour:min:sec - 1.3.6.1.4.1.11256.1.10.2
+  - name: snsMem
+    oid: 1.3.6.1.4.1.11256.1.10.3
+    type: DisplayString
+    help: Stormshield Firewall memory used in percent (host,frag,icmp,conn,ether_state,dtrack,dyn)
+      - 1.3.6.1.4.1.11256.1.10.3
+  - name: snsStartTime
+    oid: 1.3.6.1.4.1.11256.1.10.4
+    type: DisplayString
+    help: Stormshield Firewall last stat time (%Y-%m-%d %T) - 1.3.6.1.4.1.11256.1.10.4
+  - name: snsDiskEntryIndex
+    oid: 1.3.6.1.4.1.11256.1.10.5.1.1
+    type: gauge
+    help: Index of each disk in table - 1.3.6.1.4.1.11256.1.10.5.1.1
+    indexes:
+    - labelname: snsDiskEntryIndex
+      type: gauge
+  - name: snsDiskEntryDiskName
+    oid: 1.3.6.1.4.1.11256.1.10.5.1.2
+    type: DisplayString
+    help: Name of the disk - 1.3.6.1.4.1.11256.1.10.5.1.2
+    indexes:
+    - labelname: snsDiskEntryIndex
+      type: gauge
+  - name: snsDiskEntrySmartResult
+    oid: 1.3.6.1.4.1.11256.1.10.5.1.3
+    type: DisplayString
+    help: Result of the smart infos tests - 1.3.6.1.4.1.11256.1.10.5.1.3
+    indexes:
+    - labelname: snsDiskEntryIndex
+      type: gauge
+  - name: snsDiskEntryIsRaid
+    oid: 1.3.6.1.4.1.11256.1.10.5.1.4
+    type: gauge
+    help: Is the disk a member of a RAID array - 1.3.6.1.4.1.11256.1.10.5.1.4
+    indexes:
+    - labelname: snsDiskEntryIndex
+      type: gauge
+  - name: snsDiskEntryRaidStatus
+    oid: 1.3.6.1.4.1.11256.1.10.5.1.5
+    type: DisplayString
+    help: RAID Status - 1.3.6.1.4.1.11256.1.10.5.1.5
+    indexes:
+    - labelname: snsDiskEntryIndex
+      type: gauge
+  - name: snsDiskEntryPosition
+    oid: 1.3.6.1.4.1.11256.1.10.5.1.6
+    type: DisplayString
+    help: Disk Position - 1.3.6.1.4.1.11256.1.10.5.1.6
+    indexes:
+    - labelname: snsDiskEntryIndex
+      type: gauge
+  - name: snsPowerSupplyIndex
+    oid: 1.3.6.1.4.1.11256.1.10.6.1.1
+    type: gauge
+    help: Index of each line in table - 1.3.6.1.4.1.11256.1.10.6.1.1
+    indexes:
+    - labelname: snsPowerSupplyIndex
+      type: gauge
+  - name: snsPowerSupplyPowered
+    oid: 1.3.6.1.4.1.11256.1.10.6.1.2
+    type: gauge
+    help: Is power supply powered by electricity ? - 1.3.6.1.4.1.11256.1.10.6.1.2
+    indexes:
+    - labelname: snsPowerSupplyIndex
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: snsPowerSupplyStatus
+    oid: 1.3.6.1.4.1.11256.1.10.6.1.3
+    type: DisplayString
+    help: What is the status of the power supply ? - 1.3.6.1.4.1.11256.1.10.6.1.3
+    indexes:
+    - labelname: snsPowerSupplyIndex
+      type: gauge
+  - name: snsCpuIndex
+    oid: 1.3.6.1.4.1.11256.1.10.7.1.1
+    type: gauge
+    help: Index of each CPU in table - 1.3.6.1.4.1.11256.1.10.7.1.1
+    indexes:
+    - labelname: snsCpuIndex
+      type: gauge
+  - name: snsCpuTemp
+    oid: 1.3.6.1.4.1.11256.1.10.7.1.2
+    type: gauge
+    help: Temperature in Celsius degree - 1.3.6.1.4.1.11256.1.10.7.1.2
+    indexes:
+    - labelname: snsCpuIndex
+      type: gauge
+  - name: snsBypassIndex
+    oid: 1.3.6.1.4.1.11256.1.10.8.1.1
+    type: gauge
+    help: Each line in the table - 1.3.6.1.4.1.11256.1.10.8.1.1
+    indexes:
+    - labelname: snsBypassIndex
+      type: gauge
+  - name: snsBypassI2CAddress
+    oid: 1.3.6.1.4.1.11256.1.10.8.1.2
+    type: gauge
+    help: I2C Address of Bypass Device - 1.3.6.1.4.1.11256.1.10.8.1.2
+    indexes:
+    - labelname: snsBypassIndex
+      type: gauge
+  - name: snsBypassSystemOff
+    oid: 1.3.6.1.4.1.11256.1.10.8.1.3
+    type: gauge
+    help: System-off Bypass status - 1.3.6.1.4.1.11256.1.10.8.1.3
+    indexes:
+    - labelname: snsBypassIndex
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: snsBypassJustOn
+    oid: 1.3.6.1.4.1.11256.1.10.8.1.4
+    type: gauge
+    help: Just-On Bypass status - 1.3.6.1.4.1.11256.1.10.8.1.4
+    indexes:
+    - labelname: snsBypassIndex
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: snsBypassRunTime
+    oid: 1.3.6.1.4.1.11256.1.10.8.1.5
+    type: gauge
+    help: Run-Time Bypass status - 1.3.6.1.4.1.11256.1.10.8.1.5
+    indexes:
+    - labelname: snsBypassIndex
+      type: gauge
+    enum_values:
+      1: "true"
+      2: "false"
+  - name: snsBypassWatchdog
+    oid: 1.3.6.1.4.1.11256.1.10.8.1.6
+    type: DisplayString
+    help: Run-Time Watchdog Timer state - 1.3.6.1.4.1.11256.1.10.8.1.6
+    indexes:
+    - labelname: snsBypassIndex
+      type: gauge
+  - name: snsFanIndex
+    oid: 1.3.6.1.4.1.11256.1.10.9.1.1
+    type: gauge
+    help: Each line in the table - 1.3.6.1.4.1.11256.1.10.9.1.1
+    indexes:
+    - labelname: snsFanIndex
+      type: gauge
+  - name: snsFanName
+    oid: 1.3.6.1.4.1.11256.1.10.9.1.2
+    type: DisplayString
+    help: Name of the Fan - 1.3.6.1.4.1.11256.1.10.9.1.2
+    indexes:
+    - labelname: snsFanIndex
+      type: gauge
+  - name: snsFanStatus
+    oid: 1.3.6.1.4.1.11256.1.10.9.1.3
+    type: DisplayString
+    help: Status of the Fan - 1.3.6.1.4.1.11256.1.10.9.1.3
+    indexes:
+    - labelname: snsFanIndex
+      type: gauge
+  - name: snsFanRpm
+    oid: 1.3.6.1.4.1.11256.1.10.9.1.4
+    type: gauge
+    help: Speed of the Fan - 1.3.6.1.4.1.11256.1.10.9.1.4
+    indexes:
+    - labelname: snsFanIndex
+      type: gauge
   - name: snsIPSECStatsSADMature
     oid: 1.3.6.1.4.1.11256.1.13.2.2
     type: counter
     help: Number established security associations - 1.3.6.1.4.1.11256.1.13.2.2
+  - name: snsHostIPAddr
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.1
+    type: DisplayString
+    help: IP Address of the host - 1.3.6.1.4.1.11256.1.3.1.1.1
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsHostName
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.2
+    type: DisplayString
+    help: Hostname - 1.3.6.1.4.1.11256.1.3.1.1.2
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsInterface
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.3
+    type: DisplayString
+    help: Interface - 1.3.6.1.4.1.11256.1.3.1.1.3
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsPackets
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.4
+    type: counter
+    help: total packet count - 1.3.6.1.4.1.11256.1.3.1.1.4
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsBytes
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.5
+    type: counter
+    help: total byte count (incoming + outgoing) - 1.3.6.1.4.1.11256.1.3.1.1.5
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsCurThroughput
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.7
+    type: counter
+    help: current throughput - 1.3.6.1.4.1.11256.1.3.1.1.7
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsMaxThroughput
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.8
+    type: counter
+    help: Maximum throughput - 1.3.6.1.4.1.11256.1.3.1.1.8
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsInBytes
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.9
+    type: counter
+    help: total incoming byte count - 1.3.6.1.4.1.11256.1.3.1.1.9
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsOutBytes
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.10
+    type: counter
+    help: total outgoing byte count - 1.3.6.1.4.1.11256.1.3.1.1.10
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsInCurThroughput
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.11
+    type: counter
+    help: current incoming throughput - 1.3.6.1.4.1.11256.1.3.1.1.11
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsOutCurThroughput
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.12
+    type: counter
+    help: current outgoing throughput - 1.3.6.1.4.1.11256.1.3.1.1.12
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsInMaxCurThroughput
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.13
+    type: counter
+    help: Maximum incoming throughput - 1.3.6.1.4.1.11256.1.3.1.1.13
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
+  - name: snsOutMaxCurThroughput
+    oid: 1.3.6.1.4.1.11256.1.3.1.1.14
+    type: counter
+    help: Maximum outgoing throughput - 1.3.6.1.4.1.11256.1.3.1.1.14
+    indexes:
+    - labelname: snsHostIPAddr
+      type: DisplayString
   version: 3
   max_repetitions: 25
   retries: 3
@@ -149,8 +501,8 @@ SNMPv2-SMI:
   auth:
     community: community # a changer
     security_level: authPriv
-    username: superuser # a changer
-    password: superpassword # a changer
+    username: superlogin # a changer
+    password: superpass # a changer
     auth_protocol: SHA
     priv_protocol: AES
-    priv_password: superpassword # a changer
+    priv_password: superpass # a changer
